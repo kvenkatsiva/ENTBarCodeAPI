@@ -1,0 +1,68 @@
+﻿@model ENTBarCodeAPI.Models.Barcode
+
+@{
+    ViewBag.Title = "BARCODE Details";
+}
+
+@*<h2>BARCODE Details</h2>*@
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        <strong>Error! : </strong> @TempData["ErrorMessage"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span>X</span>
+        </button>
+    </div>
+}
+
+<div>
+    @*<h4>Barcode</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BarcodeInitial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BarcodeInitial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BarcodeDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BarcodeDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BarcodePackNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BarcodePackNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BarcodeCreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BarcodeCreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BarcodeActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BarcodeActive)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BarcodeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

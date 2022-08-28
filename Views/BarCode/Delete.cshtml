@@ -1,0 +1,75 @@
+﻿@model ENTBarCodeAPI.Models.Barcode
+
+@{
+    ViewBag.Title = "BARCODE Delete";
+}
+
+@*<h2>BARCODE Delete</h2>*@
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        <strong>Error! : </strong> @TempData["ErrorMessage"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span>X</span>
+        </button>
+    </div>
+}
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    @*<h4>Barcode</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BarcodeInitial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BarcodeInitial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BarcodeDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BarcodeDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BarcodePackNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BarcodePackNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BarcodeCreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BarcodeCreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BarcodeActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BarcodeActive)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
